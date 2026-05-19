@@ -136,9 +136,9 @@ For optional calendar conversions (Hijri, Jalali, Hebrew):
 
 | Variant | Size   | Contains                                                        |
 |---------|--------|-----------------------------------------------------------------|
-| `lite`  | 0.5 MB | ~2000 major cities (capitals + large cities), primary names only |
-| `city`  | 2 MB   | ~135,000 cities, **multilingual** (all names from translations) |
-| `full`  | 2.2 MB | Same as `city` plus `state` (province/state) and `capital` flag |
+| `lite`  | 0.5 MB | ~2,000 major cities (capitals + large cities), primary names only |
+| `city`  | 2 MB   | ~135,000 cities, primary names only – no translations |
+| `full`  | 2.2 MB | ~1.3 million entries – all cities + all translations + native names + state + capital |
 
 Preload a specific variant:
 
