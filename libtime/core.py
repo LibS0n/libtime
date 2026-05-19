@@ -6,8 +6,6 @@ from importlib.resources import files
 from typing import Optional, Dict, Any
 import zoneinfo
 
-from . import _tz_cache
-
 _DB = None
 _DB_MODE = None
 
@@ -64,11 +62,7 @@ def local_datetime(city_name: str) -> Optional[datetime]:
     tz = zoneinfo.ZoneInfo(tz_str)
     return datetime.now(tz)
 
-def local_time(
-    city_name: str,
-    format: str = "24h",
-    ampm_uppercase: bool = True
-) -> Optional[str]:
+def local_time(city_name: str, format: str = "24h", ampm_uppercase: bool = True) -> Optional[str]:
     dt = local_datetime(city_name)
     if dt is None:
         return None
@@ -78,10 +72,12 @@ def local_time(
     elif format == "24h_no_sec":
         return dt.strftime("%H:%M")
     elif format == "12h":
-        return dt.strftime("%I:%M:%S %p") if ampm_uppercase else dt.strftime("%I:%M:%S %p").lower()
+        s = dt.strftime("%I:%M:%S %p")
+        return s if ampm_uppercase else s.lower()
     elif format == "12h_lower":
         return dt.strftime("%I:%M:%S %p").lower()
     elif format == "12h_no_sec":
-        return dt.strftime("%I:%M %p")
+        s = dt.strftime("%I:%M %p")
+        return s if ampm_uppercase else s.lower()
     else:
         return dt.strftime(format)
