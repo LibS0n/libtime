@@ -17,3 +17,14 @@ A Python library that finds the **timezone** of any city worldwide (offline, usi
 
 ```bash
 pip install libtime
+
+
+## Credits
+
+This library is based on a public cities database:
+- [dr5hn/countries-states-cities-database](https://github.com/dr5hn/countries-states-cities-database) (ODbL 1.0)
+
+The following is used for the optional weather feature:
+- [aiohttp](https://github.com/aio-libs/aiohttp) (Apache License 2.0)
+
+The library itself is fully capable of offline operation (with the exception of weather queries) and requires no additional runtime dependencies.
