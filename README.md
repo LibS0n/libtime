@@ -26,5 +26,6 @@ This library is based on a public cities database:
 
 The following is used for the optional weather feature:
 - [aiohttp](https://github.com/aio-libs/aiohttp) (Apache License 2.0)
+- Weather data: [Open-Meteo](https://open-meteo.com/) (free, no API key required)
 
 The library itself is fully capable of offline operation (with the exception of weather queries) and requires no additional runtime dependencies.
