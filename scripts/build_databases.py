@@ -37,10 +37,15 @@ def extract_full(city):
     }
 
 def build_lite(cities_data):
+    sorted_cities = sorted(
+        cities_data,
+        key=lambda c: c.get("population") or 0,
+        reverse=True
+    )
     capitals = {c["name"].lower() for c in cities_data if c.get("capital") in ["primary", "admin"]}
     result = {}
     count = 0
-    for city in cities_data:
+    for city in sorted_cities:
         name = city["name"].lower()
         if name in result:
             continue
@@ -50,16 +55,26 @@ def build_lite(cities_data):
     return result
 
 def build_city(cities_data):
+    sorted_cities = sorted(
+        cities_data,
+        key=lambda c: c.get("population") or 0,
+        reverse=True
+    )
     result = {}
-    for city in cities_data:
+    for city in sorted_cities:
         name = city["name"].lower()
         if name not in result:
             result[name] = extract_core(city)
     return result
 
 def build_full_multilingual(cities_data):
+    sorted_cities = sorted(
+        cities_data,
+        key=lambda c: c.get("population") or 0,
+        reverse=True
+    )
     result = {}
-    for city in cities_data:
+    for city in sorted_cities:
         name = city["name"].strip()
         base_data = extract_full(city)
 
@@ -115,10 +130,5 @@ def main():
     save_gz(full_db, "cities_full.json.gz")
 
     print("\nDatabases created successfully.")
-    print("  - lite: small, only major cities")
-    print("  - city: all cities, primary names only (~2 MB)")
-    print("  - full: all cities + translations + extra fields (~16 MB)")
-    print("Commit the .gz files to your repository.")
-
 if __name__ == "__main__":
     main()
