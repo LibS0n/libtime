@@ -17,7 +17,7 @@ A Python library that finds the **timezone** of any city worldwide (offline, usi
 
 ```bash
 pip install libtime
-
+```
 
 ## Credits
 
