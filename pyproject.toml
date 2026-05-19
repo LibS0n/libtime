@@ -16,7 +16,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
 ]
-dependencies = ["aiohttp>=3.8.0"]
+dependencies = ["aiohttp>=3.8.0", "tzdata>=2024.0"]
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
