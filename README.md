@@ -28,6 +28,9 @@ For optional calendar conversions (Hijri, Jalali, Hebrew):
 ```bash
     pip install libtime[calendar]
 ```
+```bash
+    pip install tzdata
+```
 
 ## Quickstart Examples
 
