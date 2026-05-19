@@ -4,8 +4,8 @@ from .core import (
     country_for_city,
     get_city_data,
     preload_database,
-    local_time,
     local_datetime,
+    local_time,
 )
 from .weather import get_current_weather, format_weather, WEATHER_CODES
 
@@ -17,8 +17,8 @@ try:
         "country_for_city",
         "get_city_data",
         "preload_database",
-        "local_time",
         "local_datetime",
+        "local_time",
         "get_current_weather",
         "format_weather",
         "WEATHER_CODES",
@@ -33,11 +33,11 @@ except ImportError:
         "country_for_city",
         "get_city_data",
         "preload_database",
-        "local_time",
         "local_datetime",
+        "local_time",
         "get_current_weather",
         "format_weather",
         "WEATHER_CODES",
     ]
 
-__version__ = "2.1.0"
+__version__ = "1.1.1"
