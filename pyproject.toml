@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "libtime"
-version = "1.1.1"
+version = "1.1.2"
 description = "Offline timezone lookup + local time formatting + optional weather & calendar conversions"
 readme = "README.md"
 license = {text = "MIT"}
