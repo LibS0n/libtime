@@ -162,6 +162,7 @@ If you do not preload, the library automatically uses the largest available data
 - City database: [dr5hn/countries-states-cities-database](https://github.com/dr5hn/countries-states-cities-database) (ODbL 1.0)
 - Weather API: [Open-Meteo](https://open-meteo.com/) (free, no API key)
 - HTTP client: [aiohttp](https://github.com/aio-libs/aiohttp) (Apache License 2.0)
+- Timezone data: [tzdata](https://pypi.org/project/tzdata/) (Apache License 2.0) – provides IANA timezone database, especially for Windows
 - Optional calendars: [hijri-converter](https://pypi.org/project/hijri-converter/), [jdatetime](https://pypi.org/project/jdatetime/), [convertdate](https://pypi.org/project/convertdate/)
 
 ## License
