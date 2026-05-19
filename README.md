@@ -3,17 +3,21 @@
 What time is it right now, and how do I format it?  
 `libtime` gives you the answer – offline, fast, and without API keys.
 
-A Python library that finds the **timezone** of any city worldwide (offline, using an embedded database) and optionally fetches the **current weather** via a free API.
+A Python library that finds the **timezone** of any city worldwide (offline, using an embedded database), provides **local time formatting** (12h/24h, custom strftime), supports **optional calendar conversions** (Hijri, Jalali, Hebrew), and can fetch the **current weather** via a free API.
 
 ## Features
 
 - Timezone for any city – offline, no internet required
 - Three database sizes – from "lite" (~2000 cities) to "full" (~150,000 cities)
+- Local time formatting – 12h/24h, with/without seconds, or any custom strftime pattern
+- Optional calendar conversions – Islamic (Hijri), Persian (Jalali), Hebrew
 - Current weather – async, uses Open-Meteo (free, no API key)
-- Minimal dependencies – only `aiohttp` for weather, otherwise pure Python standard library
-- Async API – works well with Discord bots (Nextcord, discord.py) and other async apps
+- Minimal dependencies – only `aiohttp` for weather; calendars are optional extras
+- Async API – works well with Discord bots (Nextcord, discord.py) and other async applications
 
 ## Installation
+
+Basic installation (timezone + weather):
 
 ```bash
 pip install libtime
