@@ -6,7 +6,7 @@ _JALALI_AVAILABLE = False
 _HEBREW_AVAILABLE = False
 
 try:
-    from hijri_converter import Hijri
+    from hijri_converter import Gregorian
     _HIJRI_AVAILABLE = True
 except ImportError:
     pass
@@ -26,17 +26,19 @@ except ImportError:
 def to_hijri(dt: datetime) -> Optional[dict]:
     if not _HIJRI_AVAILABLE:
         raise ImportError("hijri-converter not installed. Run: pip install hijri-converter")
-    h = Hijri.from_gregorian(dt.year, dt.month, dt.day)
+    
+    hijri_date = Gregorian(dt.year, dt.month, dt.day).to_hijri()
+    
     month_names = [
         "Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani",
         "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban",
         "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"
     ]
     return {
-        "year": h.year,
-        "month": h.month,
-        "month_name": month_names[h.month - 1],
-        "day": h.day,
+        "year": hijri_date.year,
+        "month": hijri_date.month,
+        "month_name": month_names[hijri_date.month - 1],
+        "day": hijri_date.day,
         "calendar": "Hijri"
     }
 
