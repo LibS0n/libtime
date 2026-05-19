@@ -61,7 +61,9 @@ def to_jalali(dt: datetime) -> Optional[dict]:
 def to_hebrew(dt: datetime) -> Optional[dict]:
     if not _HEBREW_AVAILABLE:
         raise ImportError("convertdate not installed. Run: pip install convertdate")
-    y, m, d, _ = hebrew.from_gregorian(dt.year, dt.month, dt.day)
+    
+    y, m, d = hebrew.from_gregorian(dt.year, dt.month, dt.day)
+    
     hebrew_months = [
         "Nisan", "Iyar", "Sivan", "Tammuz", "Av", "Elul",
         "Tishrei", "Cheshvan", "Kislev", "Tevet", "Shevat", "Adar"
